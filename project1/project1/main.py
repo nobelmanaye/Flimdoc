@@ -6,8 +6,9 @@ Implements an automatcially moving orb that is followed by a camera
 '''
 import pygame
 import os
-import random
 from vector2D import Vector2
+import secrets
+
 # Two different sizes now! Screen size is the amount we show the player,
 #  and world size is the size of the interactable world
 SCREEN_SIZE = Vector2(1300, 1200)
@@ -169,7 +170,7 @@ def main():
       for event in pygame.event.get():
             # only do something if the event is of type QUIT or ESCAPE is pressed
 
-            rand = random.randint(0,1)
+            rand = secrets.SystemRandom().randint(0,1)
             if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
                # change the value to False, to exit the main loop
                RUNNING = False
